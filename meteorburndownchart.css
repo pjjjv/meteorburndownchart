@@ -1,0 +1,151 @@
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    margin: 50px 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+ 
+/* Set the font for all of the elements */
+.taskform,
+.taskform input,
+.taskform button {
+    font-family: Helvetica, Arial;
+    font-size:18px;
+}
+
+#outer {
+    width: 1000px;
+    margin: 0 auto;    
+}
+
+/* 
+    position:absolute;
+    bottom: 0px;
+    left: 0px;*/
+.brand {
+    font-size: 13em;
+    font-weight: bold;
+    color: #ddd;
+}
+
+.task {
+    cursor: move;
+    padding: 5px;
+    display: inline-block;
+}
+
+/* Create a bordered box for the form */
+.task .taskform {
+    background-color:#eee;
+    padding:2px 15px;
+    border:2px solid #ddd;
+    display: inline-block;
+}
+
+.task .span {
+    display: inline-block;
+}
+
+.task .status {
+    display: inline-block;
+    width: 300px;
+    font-size: 1.75em;
+}
+
+.task .name {
+    width: 300px;
+    font-size: 1.75em;
+}
+
+.task .newName {
+    width: 300px;
+    font-size: 1.75em;
+}
+
+.task .remainingTime {
+    color:#aaa;
+    width: 50px;
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.task .newRemainingTime {
+    width: 50px;
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.task .person {
+    padding-left: 70px;
+    color:#ccc;
+    width: 300px;
+    font-size: 1.5em;
+}
+
+.task .newPerson {
+    padding-left: 70px;
+    color:#ccc;
+    width: 300px;
+    font-size: 1.5em;
+}
+
+
+.task.selected {
+    background-color: yellow;
+}
+
+.task.selected .remainingTime {
+    color: black;
+}
+
+.details, .none {
+    font-weight: bold;
+    font-size: 2em;
+    border-style: dashed none none none;
+    border-color: #ccc;
+    border-width: 4px;
+    margin: 50px 10px;
+    padding: 10px 0px;
+}
+
+.none {
+    color: #777;
+}
+
+/* Create a bordered box for the form */
+.dragover {
+    background-color:#f00;
+}
+
+
+
+
+
+
+/* Make each field container relative.
+This lets us position the label absolutely inside it. */
+.taskform span {
+    position:relative;
+}
+ 
+/* Position the labels inside our input fields. */
+.taskform label {
+    display: inline-block;
+    position:absolute;
+    padding: 5px;
+}
+ 
+/* Give our input fields a fixed width and a bit of padding */
+.taskform input {
+    display: inline-block;
+    background-color: white;
+    border: 2px inset;
+    visibility: hidden;
+    cursor: pointer;
+}

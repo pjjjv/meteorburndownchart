@@ -1,0 +1,58 @@
+<head>
+  <title>Burn Down Chart</title>
+</head>
+
+<body>
+  <div id="outer">
+    {{> taskslist}}
+  </div>
+</br>
+<span class="brand">#burndownchart</span>
+</body>
+
+<template name="taskslist">
+  <div class="taskslist">
+    <div id="wait">Wait:</br>
+      {{#each tasks}}
+        {{#if statusIs "wait"}}
+          {{> task}}
+        {{/if}}
+      {{/each}}</div>
+    <div id="inprogress">In Progress:</br>
+      {{#each tasks}}
+        {{#if statusIs "inProgress"}}
+          {{> task}}
+        {{/if}}
+      {{/each}}</div>
+    <div id="done">Done:</br>
+      {{#each tasks}}
+        {{#if statusIs "done"}}
+          {{> task}}
+        {{/if}}
+      {{/each}}</div>
+  </div>
+  </br>
+  </br>
+  </br>
+  <div>New:
+  </br>
+    <div class="task {{selected}}" tabindex="1">
+      <span class="taskform">
+        <span class="nameSpan"><input type="text" id="newtask" style="visibility: inherit" placeholder="New task" class="newName" /></span>
+        <span class="remainingTimeSpan"><label class="remainingTime"></label><input type="text" class="newRemainingTime" /></span>
+        <span class="personSpan"><label class="person"></label><input type="text" class="newPerson" /></span>
+      </span>
+    </div>
+  </div>
+</template>
+
+<template name="task">
+  <div class="task {{selected}}" tabindex="1" draggable="true" id="{{_id}}">
+    <span class="taskform">
+      <span class="nameSpan"><label class="name">{{name}}</label><input type="text" class="newName" /></span>
+      <span class="remainingTimeSpan"><label class="remainingTime">{{remainingTime}}</label><input type="text" class="newRemainingTime" /></span>
+      <span class="personSpan"><label class="person">{{person}}</label><input type="text" class="newPerson" /></span>
+    </span>
+  </div>
+</template>
+
